@@ -12,8 +12,7 @@ window.addEventListener("load", () => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
-      const proxy = "https://cors-anywhere.herokuapp.com/";
-      const api = `${proxy}https://community-open-weather-map.p.rapidapi.com/weather?lat=${lat}&lon=${long}`;
+      const api = `https://community-open-weather-map.p.rapidapi.com/weather?lat=${lat}&lon=${long}`;
 
       fetch(api, {
         method: "GET",
@@ -27,7 +26,6 @@ window.addEventListener("load", () => {
           return response.json();
         })
         .then((data) => {
-          console.log(data);
           //set dom elements from API
           const { temp } = data.main;
           const { main } = data.weather[0];
